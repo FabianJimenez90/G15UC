@@ -1,165 +1,128 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-
-ul {
-    list-style-type: none;
-    margin: 20px;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgb(117, 143, 214);
-    border-radius: 20px;
+body {
+    font-family: 'Rubik', sans-serif;
 }
 
-li {
-    float: left;
-}
-
-li a {
-    display: inline-block;
-    color: rgb(236, 88, 88);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+.f-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
-
-    font-size: 16px;
-    border-radius: 15px;
-    transition: background-color 0.3s ease;
 }
 
-li a::before {
-    content: '';
+.f-wrap::before {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 20px;
-    height: 20px;
-    background-color: rgb(255, 2555, 255, 0.5);
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(5);
-    transition: transform 0.3s ease;
-}
-
-li a:hover::before {
-    transform: translate(-50%, -50%) scale(5);
-}
-
-li a:hover {
-    background-color: rgb(205, 126, 90);
-}
-
-.active {
-    background-color: black;
-}
-
-
-.container-card {
+    content: "";
+    background: rgba(0, 0, 0, 0.2);
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
-.container-card .card {
+.f-wrap > form {
     position: relative;
-    width: 500px;
-    height: 230px;
-    padding: 15px;
-    background: linear-gradient(60deg, #151516 0%, #d2e662 100%);
-    overflow: hidden;
-    margin-bottom: 15px;
-    border-radius: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    background: rgba(233, 91, 91, 0.1);
+    backdrop-filter: blur(15px);
+    min-width: 500px;
+    min-height: 500px;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    border: 2px solid rgba(117, 230, 107, 0.3);
+    box-shadow: 0 0 30px rgba(68, 10, 226, 0.2);
 }
 
-.container-card .card h2 {
-    z-index: 99;
-    position: absolute;
-    bottom: 25px;
-    right: 130px;
-    font-size: 50px;
-    font-weight: 700;
-    color: rgba(240, 16, 16, 0.815);
-    pointer-events: none;
-    transition: 0.2s ease;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+.f-wrap > form > h1 {
+    color: #000000;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin: 0 0 30px;
 }
 
-.container-card .card p {
-    z-index: 99;
-    position: absolute;
-    bottom: 30px;
-    right: 130;
-    width: 150px;
-    color: rgb(47, 234, 100);
-    opacity: 0;
-    font-size: 12px;
-    text-align: right;
-    letter-spacing: 1px;
-    transition: 0.2s ease;
+.f-wrap .f-group {
+    position: relative;
+    margin: 0 0 20px;
 }
 
-.container-card .card span {
-    z-index: 99;
-    position: absolute;
-    top: 60px;
-    right: 35px;
-    color: rgb(0, 0, 0);
-    font-size: 12px;
-    letter-spacing: 1px;
-    writing-mode: vertical-lr;
-    transition: 0.2s ease;
-    opacity: 0.7;
+.f-wrap .f-group i {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
 }
 
-.container-card .card .pic {
-    z-index: 99;
-    width: 395px;
-    height: 200px;
-    background-image: url(../assets/img/Noisy\ miner.jpg);
-    background-size: cover;
-    border-radius: 12px;
-    transition: 0.3s ease;
+.f-wrap .f-group input {
+  width: 100%;
+  background: transparent;
+  min-height: 55px;
+  font-size: 14px;
+  color: #000000;
+  padding: 0 40px 0 20px;
+  border-radius: 50px;
+  outline: unset;
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
-.container-card .card .button {
-    position: absolute;
-    right: 30px;
-    right: 40px;
-    width: 30px;
-    height: 30px;
-    background-color: aliceblue;
-    border: none;
-    border-radius: 30px;
+.f-wrap .f-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.f-wrap .f-group input:focus {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.f-wrap .pass {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.f-wrap .pass label {
+    color: #020202;
     cursor: pointer;
-    outline: none;
-    opacity: 1;
-    transition: 0.3s ease0;
 }
 
-.container-card.card:hover button {
-    transform: scale(16.5);
-    opacity: 0.5;
+.f-wrap .pass a {
+    color: #050505;
+    font-weight: 500;
+    text-decoration: unset;
 }
 
-.container-card .card:hover h2 {
-    bottom: 80px;
-    right: 60px;
+.f-wrap .login {
+    margin: 20px 0;
 }
 
-.container-card .card:hover p {
-    opacity: 1;
-    right: 60px;
+.f-wrap .login button {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    color: #000000;
+    font-weight: 600;
+    min-height: 50px;
+    border: 0;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
 }
 
-.container-card .card:hover span {
-    opacity: 0;
-    top:  80px;
+.f-wrap .login button:hover {
+    background: #e28888;
+    color: #000;
 }
 
-.container-card .card:hover pic {
-    filter: grayscale(0);
-    width: 470px;
+.f-wrap .sign-up p {
+    color: #000000ab;
+}
+
+.f-wrap .sign-up a {
+    color: #000000;
+    font-weight: 600;
+    text-decoration: unset;
+}
+.f-wrap .f-group i.fa-eye-slash {
+  color: #000000;
 }
